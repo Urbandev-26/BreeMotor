@@ -73,7 +73,7 @@ function initLeadForm() {
         e.preventDefault();
         
         // --- CUSTOMIZE THIS NUMBER ---
-        const WHATSAPP_NUMBER = "260000000000"; // Format: CountryCodeNumer (no + or spaces)
+        const WHATSAPP_NUMBER = "260979372032"; // Format: CountryCodeNumer (no + or spaces)
         
         const submitBtn = leadForm.querySelector("button[type='submit']");
         const originalText = submitBtn.innerHTML;
