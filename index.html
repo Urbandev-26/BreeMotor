@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bree Motors | Precision Automotive Care</title>
+    <!-- Tailwind CSS with Forms and Container Queries -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts: Space Grotesk (Headlines) and Inter (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" rel="stylesheet" />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7dd3fc",
+                        "primary-container": "#0ea5e9",
+                        "on-primary-container": "#ffffff",
+                        "surface": "#121111",
+                        "surface-variant": "#1e1e1e",
+                        "on-surface-variant": "#cbd5e1",
+                        "surface-container-lowest": "#050505",
+                        "surface-container-low": "#121111",
+                        "surface-container": "#1e1e1e",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-highest": "#3a3a3a",
+                        "outline-variant": "#2a2a2a",
+                        "background": "#121111",
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                    },
+                    borderRadius: { "DEFAULT": "0.75rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface-variant font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-xl border-b border-white/5 shadow-2xl shadow-primary-container/10">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary-container">speed</span>
+                <span class="text-xl font-black italic tracking-tighter text-primary-container font-headline uppercase leading-none">Bree Motors</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden lg:flex items-center gap-8">
+                <li><a href="#" class="text-xs font-headline font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Home</a></li>
+                <li><a href="#services" class="text-xs font-headline font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Services</a></li>
+                <li><a href="#about" class="text-xs font-headline font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">About</a></li>
+                <li><a href="#portfolio" class="text-xs font-headline font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Work</a></li>
+            </ul>
+
+            <button class="bg-primary-container text-on-primary-container px-6 py-2.5 font-headline font-bold text-sm rounded-full hover:brightness-110 active:scale-95 transition-all uppercase">
+                GET QUOTE
+            </button>
+        </div>
+    </nav>
+
+    <main class="pt-28 lg:pt-20">
+        <!-- Hero Section -->
+        <section class="relative min-h-[85vh] flex items-center overflow-hidden px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 z-10">
+                    <h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter leading-[0.85] mb-8 text-white uppercase">
+                        EXPERT CARE <br/> FOR YOUR RIDE.
+                    </h1>
+                    <p class="text-on-surface-variant text-base md:text-lg max-w-lg mb-10 leading-relaxed font-medium">
+                        Precision engineering meets master craftsmanship. Get professional diagnostics and repairs. Get a quote via WhatsApp in 60 seconds.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-primary-container text-on-primary-container h-14 px-10 font-headline font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform rounded-full shadow-2xl shadow-primary-container/30">
+                            <span class="material-symbols-outlined">chat</span>
+                            START QUOTE
+                        </button>
+                        <a href="#services" class="ghost-border text-primary h-12 px-8 font-headline font-bold flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors">
+                            VIEW SERVICES
+                        </a>
+                    </div>
+                </div>
+                <!-- Asymmetric Image -->
+                <div class="lg:col-span-5 relative h-full min-h-[500px] flex items-center">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary-container/30 to-transparent rounded-3xl rotate-6 blur-3xl opacity-50"></div>
+                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2683&auto=format&fit=crop" alt="Premium Car Service" class="w-full h-[120%] object-cover rounded-3xl shadow-[0_0_100px_rgba(14,165,233,0.3)] -rotate-3 relative z-10 grayscale hover:grayscale-0 transition-all duration-1000 scale-110">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section id="services" class="py-24 bg-surface-container-low px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-16">
+                    <span class="text-primary-container font-headline text-sm font-bold tracking-widest uppercase mb-2 block">Specialized</span>
+                    <h2 class="font-headline text-4xl md:text-5xl font-bold text-white uppercase">Our Services</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <!-- Service 1 -->
+                    <div class="service-card bg-surface-container-highest p-8 flex flex-col items-center text-center gap-4 hover:bg-surface-container-high transition-all ghost-border group cursor-pointer group rounded-2xl shadow-sm" data-service="Oil Change">
+                        <span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary-container transition-colors">oil_barrel</span>
+                        <span class="font-headline font-bold text-xs tracking-tighter uppercase">Oil Change</span>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="service-card bg-surface-container-highest p-8 flex flex-col items-center text-center gap-4 hover:bg-surface-container-high transition-all ghost-border group cursor-pointer group rounded-2xl shadow-sm" data-service="Brakes & Suspension">
+                        <span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary-container transition-colors">settings_input_component</span>
+                        <span class="font-headline font-bold text-xs tracking-tighter uppercase">Brake Systems</span>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="service-card bg-surface-container-highest p-8 flex flex-col items-center text-center gap-4 hover:bg-surface-container-high transition-all ghost-border group cursor-pointer group rounded-2xl shadow-sm" data-service="Engine & Diagnostics">
+                        <span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary-container transition-colors">barcode_scanner</span>
+                        <span class="font-headline font-bold text-xs tracking-tighter uppercase">Diagnostics</span>
+                    </div>
+                    <!-- Service 4 -->
+                    <div class="service-card bg-surface-container-highest p-8 flex flex-col items-center text-center gap-4 hover:bg-surface-container-high transition-all ghost-border group cursor-pointer group rounded-2xl shadow-sm" data-service="Brakes & Suspension">
+                        <span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary-container transition-colors">minor_crash</span>
+                        <span class="font-headline font-bold text-xs tracking-tighter uppercase">Suspension</span>
+                    </div>
+                    <!-- Service 5 -->
+                    <div class="service-card bg-surface-container-highest p-8 flex flex-col items-center text-center gap-4 hover:bg-surface-container-high transition-all ghost-border group cursor-pointer group rounded-2xl shadow-sm" data-service="Engine & Diagnostics">
+                        <span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary-container transition-colors">manufacturing</span>
+                        <span class="font-headline font-bold text-xs tracking-tighter uppercase">Engine Repair</span>
+                    </div>
+                    <!-- Service 6 -->
+                    <div class="service-card bg-surface-container-highest p-8 flex flex-col items-center text-center gap-4 hover:bg-surface-container-high transition-all ghost-border group cursor-pointer group rounded-2xl shadow-sm" data-service="AC Repair">
+                        <span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary-container transition-colors">ac_unit</span>
+                        <span class="font-headline font-bold text-xs tracking-tighter uppercase">AC Service</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-32 px-6 bg-surface overflow-hidden">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <!-- Left: Image with dynamic crop -->
+                <div class="lg:col-span-6 relative">
+                    <div class="absolute -inset-4 bg-primary-container/10 blur-3xl rounded-full"></div>
+                    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=2574&auto=format&fit=crop" alt="Precision Engineering" class="w-full h-[600px] object-cover rounded-3xl shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-1000 object-right">
+                </div>
+                <!-- Right: Content -->
+                <div class="lg:col-span-6">
+                    <span class="text-primary-container font-headline text-xs font-bold tracking-[0.3em] uppercase mb-4 block">Legacy & Precision</span>
+                    <h2 class="font-headline text-4xl md:text-6xl font-bold text-white uppercase mb-8 leading-tight">About Us</h2>
+                    <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed max-w-xl">
+                        <p>
+                            Bree Motors has been at the forefront of automotive excellence for over two decades. We aren't just mechanics; we are precision engineers dedicated to the science of performance.
+                        </p>
+                        <p>
+                            From complex V8 rebuilds to high-precision brake systems, we've seen and mastered it all. Our workshop is designed for the modern connoisseur who demands nothing less than perfection for their vehicle.
+                        </p>
+                        <p>
+                            Aside from satisfying your immediate technical needs, we pride ourselves on upholding the highest level of client discretion and service transparency in the industry.
+                        </p>
+                    </div>
+                    <button class="mt-12 bg-surface-container-high text-white h-14 px-10 font-headline font-bold flex items-center justify-center gap-3 active:scale-95 transition-transform rounded-full border border-white/5 hover:bg-surface-container-highest">
+                        MEET THE TEAM
+                        <span class="material-symbols-outlined text-primary-container">groups</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio (Live from Airtable) -->
+        <section id="portfolio" class="py-24 px-6 bg-surface">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-end mb-16">
+                    <div>
+                        <span class="text-primary-container font-headline text-sm font-bold tracking-widest uppercase mb-2 block">The Proof</span>
+                        <h2 class="font-headline text-4xl md:text-5xl font-bold text-white uppercase">Recent Work</h2>
+                    </div>
+                </div>
+                
+                <div id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic Content Loaded Here -->
+                    <!-- Placeholder Items -->
+                    <div class="portfolio-item bg-surface-container-low rounded-2xl overflow-hidden relative group cursor-pointer h-80">
+                        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2670&auto=format&fit=crop" class="portfolio-img w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+                            <span class="text-primary-container text-xs font-bold tracking-widest uppercase">Full Restoration</span>
+                            <h3 class="font-headline text-xl font-bold text-white">Classic Service</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item bg-surface-container-low rounded-2xl overflow-hidden relative group cursor-pointer h-80">
+                        <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2670&auto=format&fit=crop" class="portfolio-img w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+                            <span class="text-primary-container text-xs font-bold tracking-widest uppercase">Engine Rebuild</span>
+                            <h3 class="font-headline text-xl font-bold text-white">V8 Project</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item bg-surface-container-low rounded-2xl overflow-hidden relative group cursor-pointer h-80">
+                        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=2670&auto=format&fit=crop" class="portfolio-img w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+                            <span class="text-primary-container text-xs font-bold tracking-widest uppercase">Performance Tuning</span>
+                            <h3 class="font-headline text-xl font-bold text-white">Brake Optimization</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why BreeMotors Section -->
+        <section class="py-24 px-6 bg-surface-container-lowest">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-surface-container-high flex items-center justify-center rounded-2xl mb-6 ghost-border">
+                            <span class="material-symbols-outlined text-3xl text-primary-container">verified</span>
+                        </div>
+                        <h3 class="font-headline font-bold text-xl mb-4 text-white uppercase">Certified Mechanics</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Our experts are master craftsmen with years of automotive precision engineering.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-surface-container-high flex items-center justify-center rounded-xl mb-6 ghost-border">
+                            <span class="material-symbols-outlined text-3xl text-primary-container">payments</span>
+                        </div>
+                        <h3 class="font-headline font-bold text-xl mb-4 text-white uppercase">Transparent Pricing</h3>
+                        <p class="text-on-surface-variant leading-relaxed">No hidden fees. Every quote is detailed and competitive, ensuring value for your money.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-surface-container-high flex items-center justify-center rounded-xl mb-6 ghost-border">
+                            <span class="material-symbols-outlined text-3xl text-primary-container">bolt</span>
+                        </div>
+                        <h3 class="font-headline font-bold text-xl mb-4 text-white uppercase">Fast Turnaround</h3>
+                        <p class="text-on-surface-variant leading-relaxed">High-speed diagnostics and master repairs to get you back on the road in no time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Reviews Section: The Industrial Wall of Proof -->
+        <section id="reviews" class="py-32 px-6 bg-surface-dim relative overflow-hidden">
+            <!-- Background Glows -->
+            <div class="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-primary-container/5 blur-[120px] rounded-full -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary/5 blur-[100px] rounded-full"></div>
+
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <span class="text-primary-container font-headline text-xs font-bold tracking-[0.3em] uppercase mb-4 block">Proven Precision</span>
+                    <h2 class="font-headline text-4xl md:text-6xl font-bold text-white uppercase mb-4">Client Voice</h2>
+                    <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Don't just take our word for it. Explore the experiences of our valued clients across our workshop floor.</p>
+                </div>
+
+                <div class="review-wall grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 h-[800px] overflow-hidden mask-fade-vertical">
+                    <!-- Column 1: Up -->
+                    <div class="review-column marquee-up">
+                        <div class="review-group">
+                            <!-- Card 1: Lungu -->
+                            <div class="review-card-v2 glass-panel p-8 rounded-[2rem] border border-white/5 shadow-2xl">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="star-rating">
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-6 h-6 opacity-80" alt="Google">
+                                </div>
+                                <p class="text-white text-lg leading-relaxed mb-8">"Great service and very professional. 💯"</p>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <img src="assets/avatars/lungu.png" class="w-12 h-12 rounded-full border border-white/10" alt="Lungu Chizuzu">
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm">Lungu Chizuzu</h4>
+                                        <p class="text-on-surface-variant text-xs uppercase tracking-wider">Verified Local Guide</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 2: Placeholder -->
+                            <div class="review-card-v2 glass-panel p-8 rounded-[2rem] border border-white/5 shadow-2xl">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="star-rating">
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-6 h-6 opacity-80" alt="Google">
+                                </div>
+                                <p class="text-white text-lg leading-relaxed mb-8">"The only workshop I trust with my Range Rover. Their diagnostics are surgical."</p>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <img src="assets/avatars/tony.png" class="w-12 h-12 rounded-full border border-white/10" alt="Tony Mwamba">
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm">Tony Mwamba</h4>
+                                        <p class="text-on-surface-variant text-xs uppercase tracking-wider">Premium Client</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- DUPLICATE FOR SEAMLESS LOOP -->
+                        <div class="review-group">
+                            <div class="review-card-v2 glass-panel p-8 rounded-[2rem] border border-white/5 shadow-2xl">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="star-rating">
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-6 h-6 opacity-80" alt="Google">
+                                </div>
+                                <p class="text-white text-lg leading-relaxed mb-8">"Great service and very professional. 💯"</p>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <img src="assets/avatars/lungu.png" class="w-12 h-12 rounded-full border border-white/10" alt="Lungu Chizuzu">
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm">Lungu Chizuzu</h4>
+                                        <p class="text-on-surface-variant text-xs uppercase tracking-wider">Verified Local Guide</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-card-v2 glass-panel p-8 rounded-[2rem] border border-white/5 shadow-2xl">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="star-rating">
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-6 h-6 opacity-80" alt="Google">
+                                </div>
+                                <p class="text-white text-lg leading-relaxed mb-8">"The only workshop I trust with my Range Rover. Their diagnostics are surgical."</p>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <img src="assets/avatars/tony.png" class="w-12 h-12 rounded-full border border-white/10" alt="Tony Mwamba">
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm">Tony Mwamba</h4>
+                                        <p class="text-on-surface-variant text-xs uppercase tracking-wider">Premium Client</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Down -->
+                    <div class="review-column marquee-down hidden md:flex">
+                        <div class="review-group">
+                            <!-- Card 1: Kumbize -->
+                            <div class="review-card-v2 glass-panel p-8 rounded-[2rem] border border-white/5 shadow-2xl">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="star-rating">
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-6 h-6 opacity-80" alt="Google">
+                                </div>
+                                <p class="text-white text-lg leading-relaxed mb-8">"Efficient service. Communication is excellent. Highly recommended for motor vehicle needs."</p>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <img src="assets/avatars/kumbize.png" class="w-12 h-12 rounded-full border border-white/10" alt="Kumbize Zulu">
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm">Kumbize Zulu</h4>
+                                        <p class="text-on-surface-variant text-xs uppercase tracking-wider">Entrepreneur</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 2: Mwamba -->
+                            <div class="review-card-v2 glass-panel p-8 rounded-[2rem] border border-white/5 shadow-2xl">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="star-rating">
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-6 h-6 opacity-80" alt="Google">
+                                </div>
+                                <p class="text-white text-lg leading-relaxed mb-8">"Best diagnostic service in town. They found the electrical fault that three other garages couldn't figure out."</p>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <img src="assets/avatars/mwamba.png" class="w-12 h-12 rounded-full border border-white/10" alt="Mwamba Musonda">
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm">Mwamba Musonda</h4>
+                                        <p class="text-on-surface-variant text-xs uppercase tracking-wider">Business Analyst</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- DUPLICATE FOR SEAMLESS LOOP -->
+                        <div class="review-group">
+                            <div class="review-card-v2 glass-panel p-8 rounded-[2rem] border border-white/5 shadow-2xl">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="star-rating">
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-6 h-6 opacity-80" alt="Google">
+                                </div>
+                                <p class="text-white text-lg leading-relaxed mb-8">"Efficient service. Communication is excellent. Highly recommended for motor vehicle needs."</p>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <img src="assets/avatars/kumbize.png" class="w-12 h-12 rounded-full border border-white/10" alt="Kumbize Zulu">
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm">Kumbize Zulu</h4>
+                                        <p class="text-on-surface-variant text-xs uppercase tracking-wider">Entrepreneur</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-card-v2 glass-panel p-8 rounded-[2rem] border border-white/5 shadow-2xl">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="star-rating">
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-6 h-6 opacity-80" alt="Google">
+                                </div>
+                                <p class="text-white text-lg leading-relaxed mb-8">"Best diagnostic service in town. They found the electrical fault that three other garages couldn't figure out."</p>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <img src="assets/avatars/mwamba.png" class="w-12 h-12 rounded-full border border-white/10" alt="Mwamba Musonda">
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm">Mwamba Musonda</h4>
+                                        <p class="text-on-surface-variant text-xs uppercase tracking-wider">Business Analyst</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Up -->
+                    <div class="review-column marquee-up hidden lg:flex">
+                        <div class="review-group">
+                            <!-- Card 1: Chiteta -->
+                            <div class="review-card-v2 glass-panel p-8 rounded-[2rem] border border-white/5 shadow-2xl">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="star-rating">
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-6 h-6 opacity-80" alt="Google">
+                                </div>
+                                <p class="text-white text-lg leading-relaxed mb-8">"The standard of work is very good, I would definitely recommend it to anyone else looking for a professional and reliable mechanic."</p>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <img src="assets/avatars/chiteta.png" class="w-12 h-12 rounded-full border border-white/10" alt="Chiteta Njungu">
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm">Chiteta Njungu</h4>
+                                        <p class="text-on-surface-variant text-xs uppercase tracking-wider">Architect</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 2: Placeholder -->
+                            <div class="review-card-v2 glass-panel p-8 rounded-[2rem] border border-white/5 shadow-2xl">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="star-rating">
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-6 h-6 opacity-80" alt="Google">
+                                </div>
+                                <p class="text-white text-lg leading-relaxed mb-8">"Professionalism from start to finish. They handled my brake optimization with absolute care."</p>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <img src="assets/avatars/sarah.png" class="w-12 h-12 rounded-full border border-white/10" alt="Sarah Phiri">
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm">Sarah Phiri</h4>
+                                        <p class="text-on-surface-variant text-xs uppercase tracking-wider">Verified Customer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- DUPLICATE FOR SEAMLESS LOOP -->
+                        <div class="review-group">
+                            <div class="review-card-v2 glass-panel p-8 rounded-[2rem] border border-white/5 shadow-2xl">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="star-rating">
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-6 h-6 opacity-80" alt="Google">
+                                </div>
+                                <p class="text-white text-lg leading-relaxed mb-8">"The standard of work is very good, I would definitely recommend it to anyone else looking for a professional and reliable mechanic."</p>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <img src="assets/avatars/chiteta.png" class="w-12 h-12 rounded-full border border-white/10" alt="Chiteta Njungu">
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm">Chiteta Njungu</h4>
+                                        <p class="text-on-surface-variant text-xs uppercase tracking-wider">Architect</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-card-v2 glass-panel p-8 rounded-[2rem] border border-white/5 shadow-2xl">
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="star-rating">
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                        <span class="material-symbols-outlined fill-1">star</span>
+                                    </div>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-6 h-6 opacity-80" alt="Google">
+                                </div>
+                                <p class="text-white text-lg leading-relaxed mb-8">"Professionalism from start to finish. They handled my brake optimization with absolute care."</p>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <img src="assets/avatars/sarah.png" class="w-12 h-12 rounded-full border border-white/10" alt="Sarah Phiri">
+                                    <div>
+                                        <h4 class="text-white font-bold text-sm">Sarah Phiri</h4>
+                                        <p class="text-on-surface-variant text-xs uppercase tracking-wider">Verified Customer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="py-24 px-6">
+            <div class="max-w-5xl mx-auto bg-surface-container-high p-8 md:p-16 relative overflow-hidden rounded-lg">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/10 blur-[100px] -mr-32 -mt-32"></div>
+                <div class="relative z-10 text-center flex flex-col items-center">
+                    <h2 class="font-headline text-4xl md:text-5xl font-bold mb-6 tracking-tight text-white uppercase">Ready to hit the road?</h2>
+                    <p class="text-on-surface-variant max-w-xl mb-10 text-lg">
+                        Our technicians are standing by. Get an instant estimate for your vehicle service through our high-speed WhatsApp portal.
+                    </p>
+                    <button class="bg-primary-container text-on-primary-container h-16 px-12 font-headline font-bold text-lg flex items-center gap-4 hover:scale-105 transition-transform shadow-xl shadow-primary-container/20 uppercase rounded-full">
+                        Get your free quote
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- BottomNavBar (Mobile Only) -->
+    <div class="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-[#353535]/60 backdrop-blur-xl rounded-2xl z-50 shadow-[0_0_32px_0_rgba(14,165,233,0.1)] flex justify-around items-center p-2 border border-white/5">
+        <a href="#" class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl p-3 active:scale-90 transition-all">
+            <span class="material-symbols-outlined">home</span>
+        </a>
+        <a href="#services" class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:bg-white/5 rounded-xl active:scale-90 transition-all">
+            <span class="material-symbols-outlined">build</span>
+        </a>
+        <a href="#portfolio" class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:bg-white/5 rounded-xl active:scale-90 transition-all">
+            <span class="material-symbols-outlined">directions_car</span>
+        </a>
+        <a href="javascript:void(0)" onclick="document.getElementById('leadModal').classList.remove('hidden'); document.getElementById('leadModal').classList.add('flex');" class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:bg-white/5 rounded-xl active:scale-90 transition-all">
+            <span class="material-symbols-outlined">chat</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full py-12 px-6 bg-surface-container-lowest border-t border-white/5 flex flex-col items-center gap-6 text-center pb-32 lg:pb-12">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary-container">speed</span>
+            <span class="text-lg font-bold text-primary-container font-headline uppercase">Bree Motors</span>
+        </div>
+        <div class="flex gap-6 text-xs font-body tracking-tight text-on-surface-variant">
+            <a href="#" class="hover:text-white transition-colors">Privacy</a>
+            <a href="#" class="hover:text-white transition-colors">Terms</a>
+            <a href="#" class="hover:text-white transition-colors">Support</a>
+
+        </div>
+        <p class="text-[10px] text-on-surface-variant/50 font-body uppercase tracking-[0.2em]">
+            © 2024 BREE MOTORS. PRECISION ENGINEERED.
+        </p>
+    </footer>
+
+    <!-- Lead Modal -->
+    <div id="leadModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-6 glass-panel ring-1 ring-white/5">
+        <div class="bg-surface-container-high w-full max-w-lg rounded-xl relative overflow-hidden border border-white/5 shadow-2xl">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-8">
+                    <div>
+                        <h2 class="font-headline text-2xl font-bold text-white uppercase">Get Quote</h2>
+                        <p class="text-on-surface-variant text-sm mt-1">Fill in the technical specs below</p>
+                    </div>
+                    <button id="closeModal" class="text-on-surface-variant hover:text-white">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <form id="leadForm" name="leads-form" data-netlify="true" class="space-y-6">
+                    <div>
+                        <label class="block text-[10px] font-bold tracking-widest uppercase text-primary-container mb-2">Full Name</label>
+                        <input type="text" name="name" required class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary-container text-white placeholder:text-on-surface-variant/30 font-body py-4 rounded-xl" placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold tracking-widest uppercase text-primary-container mb-2">Phone Number</label>
+                        <input type="tel" name="phone" required class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary-container text-white placeholder:text-on-surface-variant/30 font-body py-4 rounded-xl" placeholder="+1 (555) 000-0000">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold tracking-widest uppercase text-primary-container mb-2">Vehicle Specs</label>
+                        <input type="text" name="car" required class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary-container text-white placeholder:text-on-surface-variant/30 font-body py-4 rounded-xl" placeholder="2022 BMW M3">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold tracking-widest uppercase text-primary-container mb-2">Service Type</label>
+                        <select name="service" required class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary-container text-white font-body py-4 rounded-xl uppercase text-xs tracking-widest">
+                            <option value="Oil Change">Oil Change</option>
+                            <option value="Brakes & Suspension">Brakes & Suspension</option>
+                            <option value="Engine & Diagnostics">Engine & Diagnostics</option>
+                            <option value="AC Repair">AC Repair</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold tracking-widest uppercase text-primary-container mb-2">Issue Description</label>
+                        <textarea name="description" required rows="3" class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary-container text-white placeholder:text-on-surface-variant/30 font-body py-4 rounded-xl" placeholder="Describe the symptoms..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary-container text-on-primary-container h-14 font-headline font-bold text-lg hover:brightness-110 active:scale-[0.98] transition-all mt-4 flex items-center justify-center gap-3 uppercase rounded-full">
+                        Submit & Chat
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <img src="" alt="Zoomed view">
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

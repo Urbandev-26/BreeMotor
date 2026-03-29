@@ -1,0 +1,13 @@
+[build]
+  command = "echo 'No build step required'"
+  functions = "netlify/functions"
+  publish = "."
+
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["@netlify/blobs"]
+
+[[redirects]]
+  from = "/service-login"
+  to = "/hq-access.html"
+  status = 200

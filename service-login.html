@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Bree Motors | HQ Auth</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts: Space Grotesk (Headlines) and Inter (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" rel="stylesheet" />
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7dd3fc",
+                        "primary-container": "#0ea5e9",
+                        "on-primary-container": "#ffffff",
+                        "surface": "#121111",
+                        "surface-variant": "#1e1e1e",
+                        "on-surface-variant": "#cbd5e1",
+                        "surface-container-lowest": "#050505",
+                        "surface-container-low": "#121111",
+                        "surface-container": "#1e1e1e",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-highest": "#3a3a3a",
+                        "outline-variant": "#2a2a2a",
+                        "background": "#121111",
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                    },
+                    borderRadius: { "DEFAULT": "0.75rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .admin-glass {
+            background: rgba(30, 30, 30, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface-variant font-body antialiased">
+
+    <!-- Login Screen -->
+    <div id="loginScreen" class="fixed inset-0 flex items-center justify-center bg-surface-container-lowest z-[1000]">
+        <div class="admin-glass p-12 rounded-3xl w-full max-w-sm shadow-2xl text-center">
+            <span class="material-symbols-outlined text-4xl text-primary-container mb-4">speed</span>
+            <h1 class="font-headline text-2xl font-black text-white uppercase mb-8">Service Entry</h1>
+            <div class="space-y-4">
+                <input type="password" id="adminPassword" placeholder="ACCESS PIN" class="w-full bg-surface-container-high border-none focus:ring-1 focus:ring-primary-container text-white placeholder:text-on-surface-variant/30 text-center font-bold tracking-widest py-4 rounded-xl">
+                <button id="loginBtn" class="w-full bg-primary-container text-on-primary-container h-14 font-headline font-bold uppercase rounded-full hover:brightness-110 active:scale-95 transition-all">Authorize</button>
+            </div>
+            <p class="mt-8 text-[10px] text-on-surface-variant/40 uppercase tracking-widest leading-relaxed">
+                FOR AUTHORIZED SERVICE PERSONNEL ONLY.<br/>
+                SECURE TRACE ACTIVATED.
+            </p>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <main id="adminDashboard" class="hidden min-h-screen p-8 max-w-5xl mx-auto pb-32">
+        <header class="flex justify-between items-center mb-16 border-b border-white/5 pb-8">
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-primary-container">speed</span>
+                <div>
+                    <h1 class="font-headline text-xl font-black text-white uppercase">Bree Motors</h1>
+                    <p class="text-[10px] text-primary-container font-black tracking-widest uppercase">HQ Control Dashboard</p>
+                </div>
+            </div>
+            <button onclick="sessionStorage.removeItem('bree_admin_authorized'); location.reload();" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-white transition-colors">Logout</button>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Add New Section -->
+            <section class="lg:col-span-4 lg:sticky lg:top-8 h-fit">
+                <h2 class="font-headline text-lg font-bold text-white uppercase mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary-container">add_circle</span>
+                    Add to Portfolio
+                </h2>
+                
+                <form id="addPortfolioForm" class="space-y-4 admin-glass p-6 rounded-2xl">
+                    <div>
+                        <label class="block text-[10px] font-bold text-primary-container uppercase tracking-widest mb-1">Car Model</label>
+                        <input type="text" name="Car_Model" required placeholder="BMW M3 COMPETITION" class="w-full bg-surface-container-high border-none focus:ring-1 focus:ring-primary-container text-white placeholder:text-on-surface-variant/30 text-sm font-bold uppercase py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-primary-container uppercase tracking-widest mb-1">Service Type</label>
+                        <select name="Service_Type" required class="w-full bg-surface-container-high border-none focus:ring-1 focus:ring-primary-container text-white text-sm font-bold uppercase py-3 rounded-xl">
+                            <option value="OIL CHANGE">OIL CHANGE</option>
+                            <option value="BRAKE SYSTEMS">BRAKE SYSTEMS</option>
+                            <option value="DIAGNOSTICS">DIAGNOSTICS</option>
+                            <option value="SUSPENSION">SUSPENSION</option>
+                            <option value="ENGINE REPAIR">ENGINE REPAIR</option>
+                            <option value="AC SERVICE">AC SERVICE</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-primary-container uppercase tracking-widest mb-1">Image URL</label>
+                        <input type="url" name="Work_Image" required placeholder="HTTPS://IMAGE.URL" class="w-full bg-surface-container-high border-none focus:ring-1 focus:ring-primary-container text-white placeholder:text-on-surface-variant/30 text-sm font-mono py-3 rounded-xl">
+                    </div>
+                    <div class="flex items-center gap-2 py-4">
+                        <input type="checkbox" name="Featured" id="featuredCheck" class="rounded-sm bg-surface-container-high border-white/10 text-primary-container focus:ring-0">
+                        <label for="featuredCheck" class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Featured Entry</label>
+                    </div>
+                    <button type="submit" class="w-full bg-primary-container text-on-primary-container h-12 font-headline font-bold text-sm uppercase rounded-xl hover:brightness-110 transition-all">
+                        Post to Portfolio
+                    </button>
+                    <p class="text-[9px] text-center text-on-surface-variant/30 mt-4 leading-relaxed tracking-wider italic uppercase font-bold">Entries are saved immediately to Netlify Blobs.</p>
+                </form>
+            </section>
+
+            <!-- Live Feed Section -->
+            <section class="lg:col-span-8">
+                <h2 class="font-headline text-lg font-bold text-white uppercase mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary-container">list</span>
+                    Live Feed
+                </h2>
+                <div id="itemList" class="space-y-4">
+                    <!-- Dynamic Items -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="hq-logic.js"></script>
+</body>
+</html>

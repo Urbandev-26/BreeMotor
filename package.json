@@ -1,0 +1,19 @@
+{
+  "name": "breemotor",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "dev": "netlify dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "netlify-cli": "^24.8.1"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^10.7.4"
+  }
+}

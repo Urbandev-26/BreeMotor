@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bree Motors | Precision Automotive Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#85cfff",
+                        "surface-variant": "#353535",
+                        "surface-dim": "#131313",
+                        "tertiary-fixed-dim": "#85cfff",
+                        "surface-bright": "#393939",
+                        "secondary": "#fdb881",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#313030",
+                        "surface-container": "#20201f",
+                        "on-secondary-fixed-variant": "#6a3b0f",
+                        "on-tertiary-fixed-variant": "#004c6c",
+                        "error": "#ffb4ab",
+                        "primary-container": "#ff8c00",
+                        "surface-container-low": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#904d00",
+                        "tertiary-container": "#00b5fc",
+                        "surface-container-lowest": "#0e0e0e",
+                        "background": "#131313",
+                        "surface-container-highest": "#353535",
+                        "primary": "#ffb77d",
+                        "on-background": "#e5e2e1",
+                        "on-primary-container": "#623200",
+                        "primary-fixed-dim": "#ffb77d",
+                        "on-primary": "#4d2600",
+                        "on-surface-variant": "#ddc1ae",
+                        "outline": "#a48c7a",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-secondary-container": "#e9a771",
+                        "primary-fixed": "#ffdcc3",
+                        "on-primary-fixed": "#2f1500",
+                        "outline-variant": "#564334",
+                        "on-surface": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface": "#131313",
+                        "tertiary-fixed": "#c7e7ff",
+                        "on-tertiary": "#00344c",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-tertiary-fixed": "#001e2e",
+                        "secondary-container": "#6a3b0f",
+                        "on-secondary": "#4d2600",
+                        "on-tertiary-container": "#004360",
+                        "on-secondary-fixed": "#2f1500",
+                        "surface-tint": "#ffb77d",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#fdb881",
+                        "inverse-surface": "#e5e2e1"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/60 dark:bg-[#131313]/60 backdrop-blur-xl border-b border-white/5 shadow-2xl shadow-orange-500/5">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#ff8c00]" data-icon="speed">speed</span>
+<span class="text-xl font-black italic tracking-tighter text-[#ff8c00] font-headline">BREE MOTORS</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 font-headline font-bold tracking-tight rounded-sm hover:brightness-110 active:scale-95 transition-all">
+                GET QUOTE
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[707px] flex items-center overflow-hidden px-6 lg:px-12">
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10">
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] mb-6 text-on-surface">
+                        EXPERT CARE <br/> FOR YOUR RIDE.
+                    </h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-lg mb-10 leading-relaxed">
+                        Precision engineering meets master craftsmanship. Get transparent quotes via WhatsApp in under 60 seconds.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-on-primary-container h-12 px-8 font-headline font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                            START QUOTE
+                        </button>
+<button class="border border-outline-variant/30 text-primary h-12 px-8 font-headline font-bold flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors">
+                            VIEW SERVICES
+                        </button>
+</div>
+</div>
+<!-- Asymmetric Image Placement -->
+<div class="lg:col-span-5 relative h-full min-h-[400px]">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-transparent rounded-xl rotate-3"></div>
+<img alt="Luxury vehicle engine bay" class="w-full h-full object-cover rounded-xl shadow-2xl -rotate-2 relative z-10 grayscale hover:grayscale-0 transition-all duration-700" data-alt="Close-up of a high-performance luxury car engine with carbon fiber details and orange accents in a dimly lit garage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU2_7I2bS7iZzEQf797c5pemPCgs7Tifu-WEIIcytRMdhmPyaDSjk6-R3zboJ595m5RAWX7FaIjenHRqmSeW-EkxHe72Vo71ujZ03tWpT0TgS3r67Wct5SAe3GLTFlJjwblgo8W1SCTcejvDPXX7YHHJS_qeDk_-j5eCagChpmzIkW551nL_iZ806UPb6C5nzFLZVsNQQBMLPtFPZt0XDa324hBoVdcHdpO15PFPxwKtg_4CeKz-VmV3LkvPfP42p-5lHeH7TBv9c"/>
+</div>
+</div>
+</section>
+<!-- Services Grid (The Precision Gauges) -->
+<section class="py-24 bg-surface-container-low px-6">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<span class="text-primary font-headline text-sm font-bold tracking-widest uppercase">Specialized</span>
+<h2 class="font-headline text-4xl font-bold mt-2">SERVICES</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<!-- Service Card 1 -->
+<div class="bg-surface-container-highest p-8 flex flex-col items-center text-center gap-4 hover:bg-surface-container-high transition-all border border-transparent hover:border-primary/20 group cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors" data-icon="oil_barrel">oil_barrel</span>
+<span class="font-headline font-bold text-sm tracking-tighter uppercase">OIL CHANGE</span>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface-container-highest p-8 flex flex-col items-center text-center gap-4 hover:bg-surface-container-high transition-all border border-transparent hover:border-primary/20 group cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors" data-icon="settings_input_component">settings_input_component</span>
+<span class="font-headline font-bold text-sm tracking-tighter uppercase">BRAKES</span>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface-container-highest p-8 flex flex-col items-center text-center gap-4 hover:bg-surface-container-high transition-all border border-transparent hover:border-primary/20 group cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors" data-icon="barcode_scanner">barcode_scanner</span>
+<span class="font-headline font-bold text-sm tracking-tighter uppercase">DIAGNOSTICS</span>
+</div>
+<!-- Service Card 4 -->
+<div class="bg-surface-container-highest p-8 flex flex-col items-center text-center gap-4 hover:bg-surface-container-high transition-all border border-transparent hover:border-primary/20 group cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors" data-icon="minor_crash">minor_crash</span>
+<span class="font-headline font-bold text-sm tracking-tighter uppercase">SUSPENSION</span>
+</div>
+<!-- Service Card 5 -->
+<div class="bg-surface-container-highest p-8 flex flex-col items-center text-center gap-4 hover:bg-surface-container-high transition-all border border-transparent hover:border-primary/20 group cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors" data-icon="manufacturing">manufacturing</span>
+<span class="font-headline font-bold text-sm tracking-tighter uppercase">GEARBOX</span>
+</div>
+<!-- Service Card 6 -->
+<div class="bg-surface-container-highest p-8 flex flex-col items-center text-center gap-4 hover:bg-surface-container-high transition-all border border-transparent hover:border-primary/20 group cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors" data-icon="ac_unit">ac_unit</span>
+<span class="font-headline font-bold text-sm tracking-tighter uppercase">AC REPAIR</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic Portfolio (Bento Grid) -->
+<section class="py-24 px-6 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="text-primary font-headline text-sm font-bold tracking-widest uppercase">Showcase</span>
+<h2 class="font-headline text-4xl font-bold mt-2">RECENT WORK</h2>
+</div>
+<button class="hidden md:block text-on-surface-variant hover:text-primary font-headline font-bold uppercase tracking-widest text-xs transition-colors">
+                        View All Projects →
+                    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[800px] md:h-[600px]">
+<!-- Main Feature -->
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-low rounded-xl overflow-hidden relative group cursor-pointer">
+<img alt="Porsche restoration" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Pristine silver Porsche being detailed in a bright modern workshop with reflections on its curved body" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0v7t5ycVnrWU31u6NPX9ffpo-GsQ7UNcol3JUDgCVbjUtJXfENsFzSnjzDynXicMorZR9Z_zuefTnhyyijIvVvVlJxbAqF4ZO6P8bKAHO4KD6sWSj-L85Gf9gopKqXJDjDKCKN5E2WB3PNZXphChFvP5lMkV4wl-V_lHOb7ZjxrVt-PZXqgtnpl4RP-IQmIflu7mcCz4ebUIN9txgBMQ0JWItBNPvkDkraz1JQW-HuYZfmCM3h798OkWEFIJeS5hee7cnhJKyUTk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
+<span class="text-primary text-xs font-bold tracking-widest uppercase">Full Restoration</span>
+<h3 class="font-headline text-2xl font-bold">Porsche 911 GT3</h3>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="md:col-span-2 md:row-span-1 bg-surface-container-low rounded-xl overflow-hidden relative group cursor-pointer">
+<img alt="Engine rebuild" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Mechanic hands working on a complex high-performance V8 engine block with blue ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPaYVBKgAysrhoMD5wJte4ha0OeFqnEl8CNyUul3rV_-IOKcUHRYJozTfucYQfpgQRCaQVQlUuISzpmcsp5y-SkG2RPFuHpByGwblgZLovXUuae2UPKvUmfngkwDyp2JHEi9S6SKVWIlu7J84XVIVPa5y1uEIiDDm244hM4sKCjnMWTC0R3mQIVOwk5c3rkGRfEZiG3Ij45o77uhIr9t9m-eihzb2iCM_mPzMjthd3sR6q5x5ZzOEwJctjsZfGg215mjh_AdI2fgU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+<span class="text-primary text-xs font-bold tracking-widest uppercase">Diagnostics</span>
+<h3 class="font-headline text-xl font-bold">Engine Rebuild</h3>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="md:col-span-1 md:row-span-1 bg-surface-container-low rounded-xl overflow-hidden relative group cursor-pointer">
+<img alt="Supercar maintenance" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of bright red supercar brake calipers and alloy wheels being serviced" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8nFnAS6QMFdPbfHngDBZE5zFe-XCsAaE5j-IeAqZp-El7bSIizBZ--DnkgujpismX4MRzN9N59FERhEa7frGUQO4bGUsA8ydIy3pYiEo6g-CVZujISB40rKntjXkyqMNY8Ypt1xSCNNFk8N_xFEzFlUvZNRd0WUAfm8n5Y_l3LpPFNYIhQ4Q6YohMGPajNyGEAqkF17EdZzeunw4RaTg2Ir88j0yucaj2vV44hIAC7oHDzQHaZjP5YFPwuGWKLoWv3OV2x2i5KsI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+<h3 class="font-headline text-lg font-bold">Brake Tuning</h3>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="md:col-span-1 md:row-span-1 bg-surface-container-low rounded-xl overflow-hidden relative group cursor-pointer">
+<img alt="Classic car service" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Atmospheric shot of a classic black muscle car in a vintage style garage with hanging industrial lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANQxYXu_y61Yxx1uFaroW8F-rcMQ2rJ9UOtPJk6cKM3sCKl28BKnS9amEpDLhxpRJ0zA6wFRCwmAGLEwzj0atOeVdUuXsHiALYswvJeDb7SVUzTUK2_u6zBr-0UkL85AKvUNC_SkV07QumM8d8JO-X7HkN8KFOm0iHIhkjMir41-ZNnCS2z_CZIKbai9UiNo0r534H-CkgQG4K5MZ5TW8ay3crnuBmb6BCloKwk_fy_la5vb5oReQEKOVj-_wblsOF65tD1WuIXMc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+<h3 class="font-headline text-lg font-bold">Classic Care</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action Section -->
+<section class="py-24 px-6">
+<div class="max-w-5xl mx-auto bg-surface-container-high p-8 md:p-16 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/10 blur-[100px] -mr-32 -mt-32"></div>
+<div class="relative z-10 text-center flex flex-col items-center">
+<h2 class="font-headline text-3xl md:text-5xl font-bold mb-6 tracking-tight">READY TO HIT THE ROAD?</h2>
+<p class="text-on-surface-variant max-w-xl mb-10 text-lg">
+                        Our technicians are standing by. Get an instant estimate for your vehicle service through our high-speed WhatsApp portal.
+                    </p>
+<button class="bg-primary-container text-on-primary-container h-16 px-12 font-headline font-bold text-lg flex items-center gap-4 hover:scale-105 transition-transform shadow-xl shadow-orange-900/20">
+                        GET YOUR FREE QUOTE
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-[#353535]/60 backdrop-blur-xl rounded-2xl z-50 shadow-[0_0_32px_0_rgba(255,140,0,0.06)] flex justify-around items-center p-2">
+<a class="flex items-center justify-center bg-[#ff8c00] text-[#131313] rounded-xl p-3 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="flex items-center justify-center text-[#ddc1ae] p-3 hover:bg-[#ffb77d]/20 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+</a>
+<a class="flex items-center justify-center text-[#ddc1ae] p-3 hover:bg-[#ffb77d]/20 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="directions_car">directions_car</span>
+</a>
+<a class="flex items-center justify-center text-[#ddc1ae] p-3 hover:bg-[#ffb77d]/20 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</a>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 bg-[#0e0e0e] border-t border-white/5 flex flex-col items-center gap-6 text-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#ff8c00]" data-icon="speed">speed</span>
+<span class="text-lg font-bold text-[#ff8c00] font-headline">BREE MOTORS</span>
+</div>
+<div class="flex gap-6 text-xs font-body tracking-tight text-[#ddc1ae]">
+<a class="hover:text-white transition-colors" href="#">Privacy</a>
+<a class="hover:text-white transition-colors" href="#">Terms</a>
+<a class="hover:text-white transition-colors" href="#">Support</a>
+</div>
+<p class="text-[10px] text-[#ddc1ae]/50 font-body uppercase tracking-[0.2em]">
+            © 2024 BREE MOTORS. PRECISION ENGINEERED.
+        </p>
+</footer>
+<!-- Lead Logic Modal (Hidden by Default) -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-6 glass-panel bg-black/80" id="leadModal">
+<div class="bg-surface-container-high w-full max-w-lg rounded-sm relative overflow-hidden border border-white/5 shadow-2xl">
+<div class="p-8">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h2 class="font-headline text-2xl font-bold">GET QUOTE</h2>
+<p class="text-on-surface-variant text-sm mt-1">Fill in the technical specs below</p>
+</div>
+<button class="text-on-surface-variant hover:text-white" id="closeModal">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<form class="space-y-6" id="leadForm">
+<div class="grid grid-cols-1 gap-6">
+<!-- Name -->
+<div>
+<label class="block text-[10px] font-bold tracking-widest uppercase text-primary mb-2">FULL NAME</label>
+<input class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary text-on-surface placeholder:text-on-surface-variant/30 font-body py-4" name="name" placeholder="John Doe" required="" type="text"/>
+</div>
+<!-- Car Details -->
+<div>
+<label class="block text-[10px] font-bold tracking-widest uppercase text-primary mb-2">VEHICLE SPECS (YEAR/MAKE/MODEL)</label>
+<input class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary text-on-surface placeholder:text-on-surface-variant/30 font-body py-4" name="car" placeholder="2022 BMW M3" required="" type="text"/>
+</div>
+<!-- Service Type -->
+<div>
+<label class="block text-[10px] font-bold tracking-widest uppercase text-primary mb-2">SERVICE TYPE</label>
+<select class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary text-on-surface font-body py-4" name="service" required="">
+<option value="Oil">Oil Change</option>
+<option value="Brakes">Brakes &amp; Suspension</option>
+<option value="Engine">Engine &amp; Diagnostics</option>
+<option value="Other">Other Maintenance</option>
+</select>
+</div>
+<!-- Description -->
+<div>
+<label class="block text-[10px] font-bold tracking-widest uppercase text-primary mb-2">ISSUE DESCRIPTION</label>
+<textarea class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary text-on-surface placeholder:text-on-surface-variant/30 font-body py-4" name="description" placeholder="Describe the sounds or symptoms..." required="" rows="3"></textarea>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container h-14 font-headline font-bold text-lg hover:brightness-110 transition-all mt-4 flex items-center justify-center gap-3" type="submit">
+                        SEND TO WHATSAPP
+                        <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+<!-- Script to handle Modal and Logic -->
+<script>
+        // Use standard JS since instructions forbid separate script files or React
+        const modal = document.getElementById('leadModal');
+        const quoteBtns = document.querySelectorAll('button:contains("GET QUOTE"), button:contains("START QUOTE"), button:contains("GET YOUR FREE QUOTE")');
+        
+        // Modal Trigger Logic
+        document.body.addEventListener('click', (e) => {
+            if (e.target.innerText.includes('QUOTE')) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        });
+
+        document.getElementById('closeModal').addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+
+        // Form Submission Logic
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Placeholder for Airtable API key and Phone Number
+            const WHATSAPP_PHONE = "YOUR_PHONE_NUMBER"; // Replace with real number
+            const AIRTABLE_API_KEY = "YOUR_AIRTABLE_KEY";
+            const BASE_ID = "YOUR_BASE_ID";
+
+            // Success Redirect Logic
+            const waText = `Hi BreeMotors! My name is ${data.name}. I have a ${data.car} and need help with ${data.service}. Details: ${data.description}.`;
+            const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(waText)}`;
+            
+            // In a real environment, we would await fetch to Airtable here
+            // fetch(`https://api.airtable.com/v0/${BASE_ID}/Leads`, { ... })
+            
+            window.location.href = waUrl;
+        });
+
+        // Simple helper for button detection in vanilla JS
+        if (!Element.prototype.matches) Element.prototype.matches = Element.prototype.msMatchesSelector;
+        if (!Element.prototype.closest) Element.prototype.closest = function(s) {
+            var el = this;
+            do {
+                if (el.matches(s)) return el;
+                el = el.parentElement || el.parentNode;
+            } while (el !== null && el.nodeType === 1);
+            return null;
+        };
+    </script>
+</body></html>

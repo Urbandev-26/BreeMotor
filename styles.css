@@ -1,0 +1,166 @@
+/* Bree Motors Design System: Industrial Precision */
+
+:root {
+  --primary: #7dd3fc;
+  --primary-container: #0ea5e9;
+  --on-primary: #000000;
+  --on-primary-container: #ffffff;
+  
+  --surface: #121111;
+  --surface-dim: #050505;
+  --surface-bright: #1e1e1e;
+  --surface-variant: #1e1e1e;
+  --on-surface-variant: #cbd5e1;
+  
+  --surface-container-lowest: #050505;
+  --surface-container-low: #121111;
+  --surface-container: #1e1e1e;
+  --surface-container-high: #2a2a2a;
+  --surface-container-highest: #3a3a3a;
+  
+  --outline-variant: #2a2a2a;
+  --error: #fca5a5;
+}
+
+/* Glass Panels */
+.glass-panel {
+  background: rgba(53, 53, 53, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Typography Adjustments */
+.font-headline {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+  color: var(--on-surface-variant);
+}
+
+/* No-Line Rule: Boundaries defined by tonal shift */
+.tonal-boundary {
+  border: none;
+}
+
+/* Ghost Border Rule (felt, not seen) */
+.ghost-border {
+  border: 1px solid rgba(86, 67, 52, 0.15);
+}
+
+/* Smooth Image Transitions */
+.portfolio-img {
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox styles */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: pointer;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  box-shadow: 0 0 50px rgba(14, 165, 233, 0.3);
+}
+
+
+/* Global Button Updates */
+button {
+    border-radius: 9999px !important; /* Fully Rounded (Pill) */
+}
+
+/* Wall of Reviews: Vertical Marquee */
+.mask-fade-vertical {
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+
+.review-wall {
+  perspective: 1000px;
+}
+
+.review-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: max-content;
+}
+
+.review-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Animations */
+.marquee-up {
+  animation: marqueeUp 60s linear infinite;
+}
+
+.marquee-down {
+  animation: marqueeDown 60s linear infinite;
+}
+
+.review-column:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes marqueeDown {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+/* Review Card V2: Dark Glassmorphism */
+.review-card-v2 {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(30, 30, 30, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.review-card-v2:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(30, 30, 30, 0.6);
+  border-color: rgba(14, 165, 233, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(14, 165, 233, 0.2);
+}
+
+.fill-1 {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.star-rating {
+    display: flex;
+    gap: 0.125rem;
+    color: #f59e0b; /* Amber 500 */
+    filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.4));
+}
+
+/* Responsive speed adjustments */
+@media (max-width: 768px) {
+  .marquee-up {
+    animation-duration: 40s;
+  }
+}
+
