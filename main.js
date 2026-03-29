@@ -47,6 +47,7 @@ function renderPortfolio(items, container) {
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 p-6 flex flex-col justify-end">
                 <span class="text-primary-container text-[10px] font-bold tracking-[0.3em] uppercase mb-1">${item.Service_Type}</span>
                 <h3 class="font-headline text-xl font-bold text-white uppercase tracking-tight">${item.Car_Model}</h3>
+                <span class="text-[10px] text-on-surface-variant/70 font-black mt-1 uppercase tracking-widest">${item.Service_Price ? 'INVESTMENT: ZMW ' + item.Service_Price : 'COMPLETED'}</span>
                 ${item.Featured ? '<span class="absolute top-4 right-4 bg-primary-container text-[10px] font-black px-2 py-1 rounded text-white shadow-lg">FEATURED</span>' : ''}
             </div>
         `;
@@ -70,63 +71,72 @@ function initLeadForm() {
 
     leadForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+        
+        // --- CUSTOMIZE THIS NUMBER ---
+        const WHATSAPP_NUMBER = "260000000000"; // Format: CountryCodeNumer (no + or spaces)
+        
         const submitBtn = leadForm.querySelector("button[type='submit']");
+        const originalText = submitBtn.innerHTML;
+
         try {
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> PROCESSING...';
+            submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> REDIRECTING...';
             
             const formData = new FormData(leadForm);
-            
-            // Required for Netlify Forms to find the form
-            formData.append("form-name", leadForm.getAttribute("name") || "leads-form");
+            const data = Object.fromEntries(formData.entries());
 
-            const response = await fetch("/", {
+            // 1. Prepare WhatsApp Message
+            const message = `🛠️ *NEW SERVICE QUOTE REQUEST*\n` +
+                          `----------------------------\n` +
+                          `👤 *Name:* ${data.name}\n` +
+                          `📱 *Phone:* ${data.phone}\n` +
+                          `🚗 *Vehicle:* ${data['vehicle-specs'] || data.car}\n` +
+                          `🔧 *Service:* ${data.service}\n` +
+                          `📝 *Details:* ${data.description}\n` +
+                          `----------------------------\n` +
+                          `_Sent via Bree Motor Contact Portal_`;
+
+            // 2. Log to Netlify in background (Optional but recommended)
+            formData.append("form-name", leadForm.getAttribute("name") || "leads-form");
+            fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams(formData).toString()
-            });
+            }).catch(err => console.error("Silent Netlify log failed:", err));
 
-            if (response.ok) {
-                // Success State - Animated Checkmark
-                submitBtn.innerHTML = `
-                    <div class="flex items-center justify-center gap-2">
-                        <span class="material-symbols-outlined text-sm">check_circle</span>
-                        DONE
-                    </div>
-                `;
-                submitBtn.classList.remove("bg-white", "text-black");
-                submitBtn.classList.add("bg-green-500/20", "text-green-500", "border-green-500/50");
-
-                // Clear lead form
-                leadForm.reset();
-                
-                // Close modal after delay
-                setTimeout(() => {
-                    const activeModal = document.querySelector('.modal-backdrop:not(.hidden)');
-                    if (activeModal) activeModal.classList.add('hidden');
-                    
-                    // Reset button back to normal state
-                    setTimeout(() => {
-                        submitBtn.innerHTML = 'GET SERVICE QUOTE';
-                        submitBtn.classList.remove("bg-green-500/20", "text-green-500", "border-green-500/50");
-                        submitBtn.classList.add("bg-white", "text-black");
-                    }, 500);
-                }, 1500);
-
-            } else {
-                throw new Error("Submission failed");
-            }
-
-        } catch (error) {
-            console.error("Lead form submission error:", error);
+            // 3. Open WhatsApp Direct
+            const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+            
+            // Visual success feedback
             submitBtn.innerHTML = `
-                <div class="flex flex-col items-center">
-                    <span class="text-[9px] font-black opacity-50 uppercase leading-none">ERROR</span>
-                    <span class="text-[11px] font-bold tracking-tighter uppercase leading-none">TRY AGAIN</span>
+                <div class="flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-sm">chat</span>
+                    OPENING WHATSAPP...
                 </div>
             `;
-            submitBtn.classList.add("text-red-500");
-        } finally {
+            submitBtn.classList.remove("bg-white", "text-black");
+            submitBtn.classList.add("bg-green-500", "text-white");
+
+            // Redirect
+            setTimeout(() => {
+                window.open(waUrl, '_blank');
+                
+                // Reset UI
+                leadForm.reset();
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.classList.remove("bg-green-500", "text-white");
+                    submitBtn.classList.add("bg-white", "text-black");
+                    
+                    const activeModal = document.querySelector('.modal-backdrop:not(.hidden)') || document.getElementById('leadModal');
+                    if (activeModal) activeModal.classList.add('hidden');
+                }, 500);
+            }, 800);
+
+        } catch (error) {
+            console.error("Lead form error:", error);
+            submitBtn.innerHTML = 'ERROR / TRY AGAIN';
             submitBtn.disabled = false;
         }
     });
