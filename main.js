@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initModals();
     initLeadForm();
     initServiceCards();
+    initQuoteButtons();
 });
 
 /**
@@ -156,6 +157,24 @@ function closeAllModals() {
         modal.classList.add("hidden");
         modal.classList.remove("flex");
     }
+}
+
+/**
+ * Global Quote Triggers - Handles generic "Get Quote" buttons
+ */
+function initQuoteButtons() {
+    const triggers = document.querySelectorAll(".quote-trigger");
+    const modal = document.getElementById("leadModal");
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (modal) {
+                modal.classList.remove("hidden");
+                modal.classList.add("flex");
+            }
+        });
+    });
 }
 
 function openLightbox(src) {
