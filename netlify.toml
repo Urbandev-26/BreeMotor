@@ -9,5 +9,5 @@
 
 [[redirects]]
   from = "/service-login"
-  to = "/hq-access.html"
+  to = "/service-login.html"
   status = 200
