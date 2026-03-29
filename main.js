@@ -70,16 +70,16 @@ function initLeadForm() {
 
     leadForm.addEventListener("submit", async (e) => {
         e.preventDefault();
-
-        const formData = new FormData(leadForm);
         const submitBtn = leadForm.querySelector("button[type='submit']");
-        const originalText = submitBtn.innerHTML;
-
         try {
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> PROCESSING...';
+            
+            const formData = new FormData(leadForm);
+            
+            // Required for Netlify Forms to find the form
+            formData.append("form-name", leadForm.getAttribute("name") || "leads-form");
 
-            // Submit to Netlify
             const response = await fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -87,23 +87,46 @@ function initLeadForm() {
             });
 
             if (response.ok) {
-                submitBtn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> SENT SUCCESSFULLY';
-                submitBtn.classList.replace("bg-primary-container", "bg-green-600");
+                // Success State - Animated Checkmark
+                submitBtn.innerHTML = `
+                    <div class="flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">check_circle</span>
+                        DONE
+                    </div>
+                `;
+                submitBtn.classList.remove("bg-white", "text-black");
+                submitBtn.classList.add("bg-green-500/20", "text-green-500", "border-green-500/50");
+
+                // Clear lead form
+                leadForm.reset();
                 
-                // Hide modal after delay
+                // Close modal after delay
                 setTimeout(() => {
-                    closeAllModals();
-                    leadForm.reset();
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.classList.replace("bg-green-600", "bg-primary-container");
-                }, 2000);
+                    const activeModal = document.querySelector('.modal-backdrop:not(.hidden)');
+                    if (activeModal) activeModal.classList.add('hidden');
+                    
+                    // Reset button back to normal state
+                    setTimeout(() => {
+                        submitBtn.innerHTML = 'GET SERVICE QUOTE';
+                        submitBtn.classList.remove("bg-green-500/20", "text-green-500", "border-green-500/50");
+                        submitBtn.classList.add("bg-white", "text-black");
+                    }, 500);
+                }, 1500);
+
             } else {
-                throw new Error("Form submission failed");
+                throw new Error("Submission failed");
             }
+
         } catch (error) {
-            console.error("Form Error:", error);
-            submitBtn.innerHTML = '<span class="material-symbols-outlined">error</span> TRY AGAIN';
+            console.error("Lead form submission error:", error);
+            submitBtn.innerHTML = `
+                <div class="flex flex-col items-center">
+                    <span class="text-[9px] font-black opacity-50 uppercase leading-none">ERROR</span>
+                    <span class="text-[11px] font-bold tracking-tighter uppercase leading-none">TRY AGAIN</span>
+                </div>
+            `;
+            submitBtn.classList.add("text-red-500");
+        } finally {
             submitBtn.disabled = false;
         }
     });
